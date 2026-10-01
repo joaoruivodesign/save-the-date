@@ -1,0 +1,274 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #8b8b8b;
+}
+
+body {
+  color: #fff;
+  font-family: "Ancizar Serif", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Andasia Personal Use Only";
+  src: url("/fonts/Andasia.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #8b8b8b;
+}
+
+.photos {
+  position: absolute;
+  inset: 0;
+}
+
+.photos img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
+.photos img.is-active {
+  opacity: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 6.25vh, 64px);
+  width: min(100%, 900px);
+  padding: 24px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.names,
+.date,
+.script,
+.place-label,
+.place-name,
+.place-city {
+  margin: 0;
+  line-height: normal;
+}
+
+.names {
+  font-size: clamp(22px, 2.22vw, 32px);
+  font-weight: 400;
+}
+
+.script {
+  font-family: "Andasia Personal Use Only", cursive;
+  font-size: clamp(64px, 8.33vw, 120px);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.date {
+  font-size: clamp(28px, 2.78vw, 40px);
+  font-weight: 400;
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  padding: 0 24px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  font-size: clamp(18px, 1.67vw, 24px);
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.calendar:hover {
+  background: rgb(255 255 255 / 16%);
+}
+
+.calendar:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  font-size: clamp(18px, 1.67vw, 24px);
+}
+
+.place-label {
+  font-weight: 300;
+}
+
+.place-name {
+  font-weight: 700;
+}
+
+.place-break {
+  display: none;
+}
+
+.countdown {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  margin: 0;
+  font-size: clamp(16px, 1.67vw, 24px);
+  font-weight: 400;
+  line-height: normal;
+}
+
+.countdown span:nth-child(1) {
+  justify-self: start;
+}
+
+.countdown span:nth-child(2) {
+  justify-self: center;
+}
+
+.countdown span:nth-child(3) {
+  justify-self: end;
+}
+
+.player {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 16px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.player-btn {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.player-btn img {
+  display: block;
+}
+
+.player-btn:hover {
+  background: rgb(255 255 255 / 16%);
+}
+
+.player-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 699px) {
+  .content {
+    gap: 48px;
+    padding: 120px 0;
+  }
+
+  .title {
+    gap: 16px;
+  }
+
+  .names {
+    font-size: 24px;
+  }
+
+  .script {
+    font-size: 64px;
+  }
+
+  .date {
+    font-size: 32px;
+  }
+
+  .calendar {
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .place {
+    width: 100%;
+    padding: 0 16px;
+    font-size: 20px;
+  }
+
+  .place-sep {
+    display: none;
+  }
+
+  .place-break {
+    display: inline;
+  }
+
+  /* Not in the mobile design: a compact single line above the player */
+  .countdown {
+    right: 16px;
+    bottom: 96px;
+    left: 16px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .player {
+    top: auto;
+    right: auto;
+    bottom: 24px;
+    left: 50%;
+    gap: 32px;
+    transform: translateX(-50%);
+  }
+}

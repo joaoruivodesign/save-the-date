@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Save the date — Margarida & João, 4 de outubro de 2027, Leiria."
+    />
+    <title>Margarida & João</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="hero">
+      <div class="photos">
+        <img class="is-active" src="./images/photo-1.png" alt="Margarida e João abraçados" />
+        <img data-src="./images/photo-2.jpg" alt="" />
+        <img data-src="./images/photo-3.jpg" alt="" />
+        <img data-src="./images/photo-4.jpg" alt="" />
+        <img data-src="./images/photo-5.jpg" alt="" />
+        <img data-src="./images/photo-6.jpg" alt="" />
+        <img data-src="./images/photo-7.jpg" alt="" />
+        <img data-src="./images/photo-8.jpg" alt="" />
+      </div>
+      <div class="content">
+        <div class="title">
+          <p class="names">Margarida &amp; João</p>
+          <h1 class="script">Save the date</h1>
+          <p class="date">04 / 10 / 2027</p>
+        </div>
+        <a class="calendar" href="./margarida-joao.ics" download>
+          Adicionar ao calendário
+        </a>
+        <div class="place">
+          <p class="place-label">Local</p>
+          <p class="place-name">
+            Iguarias do Tempo<span class="place-sep"> - </span><br class="place-break" />Quinta das Silveiras (Leiria)
+          </p>
+        </div>
+      </div>
+      <p class="countdown" aria-live="polite">
+        <span data-unit="days"></span>
+        <span data-unit="hours"></span>
+        <span data-unit="minutes"></span>
+      </p>
+      <div class="player" role="group" aria-label="Música e fotografias">
+        <button class="player-btn" type="button" data-action="prev" aria-label="Anterior">
+          <img src="./icons/fast_rewind.svg" width="24" height="24" alt="" />
+        </button>
+        <button class="player-btn player-play" type="button" data-action="toggle" aria-label="Tocar música">
+          <img src="./icons/play_arrow.svg" width="40" height="40" alt="" />
+        </button>
+        <button class="player-btn" type="button" data-action="next" aria-label="Seguinte">
+          <img src="./icons/fast_forward.svg" width="24" height="24" alt="" />
+        </button>
+      </div>
+      <audio preload="none"></audio>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
